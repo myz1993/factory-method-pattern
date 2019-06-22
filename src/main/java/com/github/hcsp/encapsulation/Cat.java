@@ -18,7 +18,7 @@ public class Cat {
      * @param name 名字
      * @return 创建的猫
      */
-    public static Cat newCat(int age, String name) {}
+    public static Cat newCat(String name, int age) {}
 
     public String getName() {
         return name;

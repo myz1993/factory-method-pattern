@@ -18,6 +18,6 @@ public class CatTest {
         Cat cat3 = Cat.newCat("", 1);
         Assertions.assertTrue(cat1 == cat2);
         Assertions.assertTrue(cat3 == cat2);
-        Assertions.assertEqials("Invalid cat", cat1.getName());
+        Assertions.assertEquals("Invalid cat", cat1.getName());
     }
 }

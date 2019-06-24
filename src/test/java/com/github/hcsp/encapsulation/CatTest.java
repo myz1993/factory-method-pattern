@@ -1,5 +1,7 @@
 package com.github.hcsp.encapsulation;
 
+import com.github.hcsp.test.helper.JavaASTReader;
+import com.github.javaparser.ast.body.ConstructorDeclaration;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -19,5 +21,12 @@ public class CatTest {
         Assertions.assertTrue(cat1 == cat2);
         Assertions.assertTrue(cat3 == cat2);
         Assertions.assertEquals("Invalid cat", cat1.getName());
+    }
+
+    @Test
+    public void noPublicConstructor() {
+        Assertions.assertTrue(
+                JavaASTReader.findAll(Cat.class, ConstructorDeclaration.class).stream()
+                        .noneMatch(ConstructorDeclaration::isPublic));
     }
 }

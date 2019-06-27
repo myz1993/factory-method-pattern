@@ -8,7 +8,7 @@ public class Cat {
     /**
      * 创建一只猫的工厂方法。当传入的参数无效，即：
      *
-     * <p>1. age小于0 2. name是空字符串或者null时
+     * <p>1. age小于0  2. name是空字符串或者null时
      *
      * <p>返回预先创建好的{@link #INVALID_CAT}；
      *
@@ -18,7 +18,19 @@ public class Cat {
      * @param name 名字
      * @return 创建的猫
      */
-    public static Cat newCat(String name, int age) {}
+    public static Cat newCat(String name, int age) {
+        boolean isInvalidAge = age < 0;
+        boolean isInvalidName = name == null || "".equals(name);
+        if (isInvalidAge || isInvalidName) {
+            return INVALID_CAT;
+        }
+        return new Cat(name, age);
+    }
+
+    private Cat(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
 
     public String getName() {
         return name;

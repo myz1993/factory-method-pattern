@@ -16,7 +16,7 @@ public class CatTest {
     @Test
     public void createInvalidCat() {
         Cat cat1 = Cat.newCat(null, -1);
-        Cat cat2 = Cat.newCat("", -1);
+        Cat cat2 = Cat.newCat(new String(""), -1);
         Cat cat3 = Cat.newCat("", 1);
         Assertions.assertTrue(cat1 == cat2);
         Assertions.assertTrue(cat3 == cat2);

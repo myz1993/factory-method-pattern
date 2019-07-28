@@ -5,7 +5,7 @@ public class Cat {
     private String name;
     private int age;
 
-    public Cat(String name, int age) {
+    private Cat(String name, int age) {
         this.age=age;
         this.name=name;
     }
@@ -26,7 +26,8 @@ public class Cat {
     public static Cat newCat(String name, int age) {
         if (age<0||name==null||"".equals(name)){
             return INVALID_CAT;
-        }return new Cat(name,age);
+        }
+            return new Cat(name,age);
 
     }
 

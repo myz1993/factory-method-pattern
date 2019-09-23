@@ -5,7 +5,7 @@ public class Cat {
     private String name;
     private int age;
 
-    public Cat(String name, int age) {
+    private  Cat(String name, int age) {
         this.name = name;
         this.age = age;
     }
@@ -25,7 +25,7 @@ public class Cat {
      * @return 创建的猫
      */
     public static Cat newCat(String name, int age) {
-        if (age < 0 || name == null || name.equals("")) {
+        if (age < 0 || name == null || name.isEmpty()) {
             return INVALID_CAT;
         } else {
             return new Cat(name, age);

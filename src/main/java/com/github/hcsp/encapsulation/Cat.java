@@ -1,7 +1,5 @@
 package com.github.hcsp.encapsulation;
 
-import org.omg.CORBA.DynAnyPackage.Invalid;
-
 public class Cat {
     private static final Cat INVALID_CAT = new Cat("Invalid cat", -1);
     private String name;
@@ -16,22 +14,11 @@ public class Cat {
      *
      * <p>否则，返回一只新创建的猫
      *
-     * @param age  年龄
+     * @param age 年龄
      * @param name 名字
      * @return 创建的猫
      */
-    public static Cat newCat(String name, int age) {
-        if (age < 0 || name == null || name.equals("")) {
-            return INVALID_CAT;
-        } else {
-            return new Cat(name, age);
-        }
-    }
-
-    private Cat(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
+    public static Cat newCat(String name, int age) {}
 
     public String getName() {
         return name;

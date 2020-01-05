@@ -26,11 +26,8 @@ Cat {
      * @return 创建的猫
      */
     public static Cat newCat(String name, int age) {
-        if ("".equals(name) || null == name) {
+        if ("".equals(name) || null == name || age < 0) {
             return INVALID_CAT;
-        } else if (age < 0) {
-            return INVALID_CAT;
-
         }
         return new Cat(name, age);
     }

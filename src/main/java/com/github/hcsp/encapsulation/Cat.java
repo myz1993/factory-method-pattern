@@ -22,7 +22,7 @@ public class Cat {
 
 
     public static Cat newCat(String name, int age) {
-        if(age<0 || (name==""||name==null)){return INVALID_CAT ;}
+        if(age<0 || name==""||name==null){return INVALID_CAT ;}
         else{return new Cat(name,age);}
     }
 

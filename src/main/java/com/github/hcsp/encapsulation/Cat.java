@@ -24,7 +24,7 @@ public class Cat {
     }
 
     public static Cat newCat(String name, int age) {
-        if (age < 0 || name.equals("")) return INVALID_CAT;
+        if (age < 0 || name == null || name.equals("")) return INVALID_CAT;
         return new Cat(name, age);
     }
 

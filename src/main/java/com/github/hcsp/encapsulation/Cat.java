@@ -1,6 +1,11 @@
 package com.github.hcsp.encapsulation;
 
 public class Cat {
+    private Cat(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
     private static final Cat INVALID_CAT = new Cat("Invalid cat", -1);
     private String name;
     private int age;
@@ -18,7 +23,10 @@ public class Cat {
      * @param name 名字
      * @return 创建的猫
      */
-    public static Cat newCat(String name, int age) {}
+    public static Cat newCat(String name, int age) {
+        if (age < 0 || name == null || "".equals(name)) return INVALID_CAT;
+        return new Cat(name, age);
+    }
 
     public String getName() {
         return name;

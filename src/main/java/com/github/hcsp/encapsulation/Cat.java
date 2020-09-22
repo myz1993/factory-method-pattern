@@ -14,17 +14,29 @@ public class Cat {
      *
      * <p>否则，返回一只新创建的猫
      *
-     * @param age 年龄
+     * @param age  年龄
      * @param name 名字
      * @return 创建的猫
      */
-    public static Cat newCat(String name, int age) {}
+    private Cat(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public static Cat newCat(String name, int age) {
+        if (name == null || name.length() == 0 || age < 0) {
+            return INVALID_CAT;
+        } else {
+            return new Cat(name, age);
+        }
+    }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public int getAge() {
-        return age;
+        return this.age;
     }
+
 }

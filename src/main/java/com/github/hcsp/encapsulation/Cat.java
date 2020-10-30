@@ -18,23 +18,7 @@ public class Cat {
      * @param name 名字
      * @return 创建的猫
      */
-    public static Cat newCat(String name, int age) {
-//        if (name.equals("") || name == null || age < 0){
-//            return INVALID_CAT;
-//        }
-//        return new Cat(name,age);
-
-        if ((name == null || name.equals("")) || age < 0){
-            return INVALID_CAT;
-        }
-        //之前代码错误原因：name==null写在了后面了，而当name为Null时，null.equals()方法都没有，所以报了空指针异常
-        return new Cat(name, age);
-    }
-
-    private Cat(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
+    public static Cat newCat(String name, int age) {}
 
     public String getName() {
         return name;

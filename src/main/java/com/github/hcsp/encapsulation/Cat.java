@@ -10,6 +10,7 @@ public class Cat {
         this.age = age;
     }
 
+
     /**
      * 创建一只猫的工厂方法。当传入的参数无效，即：
      *

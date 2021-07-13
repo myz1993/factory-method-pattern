@@ -1,9 +1,25 @@
 package com.github.hcsp.encapsulation;
 
+import java.util.Objects;
+
 public class Cat {
     private static final Cat INVALID_CAT = new Cat("Invalid cat", -1);
     private String name;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     private int age;
+
+    private Cat(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
 
     /**
      * 创建一只猫的工厂方法。当传入的参数无效，即：
@@ -18,7 +34,13 @@ public class Cat {
      * @param name 名字
      * @return 创建的猫
      */
-    public static Cat newCat(String name, int age) {}
+    public static Cat newCat(String name, int age) {
+        if (age < 0 || !Objects.nonNull(name) || name.isEmpty()) {
+            return INVALID_CAT;
+        }
+
+        return new Cat(name, age);
+    }
 
     public String getName() {
         return name;
